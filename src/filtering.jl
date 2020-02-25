@@ -144,7 +144,7 @@ Run a Kalman filter forward
 - `Rt`: filter covariances
 - `ll`: loglik
 """
-function forward_trajectory(kf::AbstractKalmanFilter, u::AbstractVector, y::AbstractVector)
+function forward_trajectory(kf::AbstractKalmanFilter, u::Vector, y::Vector)
     reset!(kf)
     T    = length(y)
     x    = Array{particletype(kf)}(undef,T)
